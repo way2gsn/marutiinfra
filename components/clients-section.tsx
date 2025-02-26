@@ -41,7 +41,7 @@ export function ClientsSection() {
         <div className="relative overflow-hidden">
           <div ref={scrollRef} className="flex gap-12 overflow-x-hidden whitespace-nowrap">
             {[...clients, ...clients].map((client, index) => (
-              <div key={index} className="inline-block min-w-[200px]">
+              <div key={index} className="inline-block min-w-[200px] text-center">
                 <Image
                   src={client.logo || "/placeholder.svg"}
                   alt={client.name}
@@ -49,6 +49,7 @@ export function ClientsSection() {
                   height={100}
                   className="object-contain"
                 />
+                <p className="mt-2  text-lg font-semibold text-[#1a1a4e] ">{client.name}</p>
               </div>
             ))}
           </div>
@@ -57,4 +58,3 @@ export function ClientsSection() {
     </section>
   )
 }
-
