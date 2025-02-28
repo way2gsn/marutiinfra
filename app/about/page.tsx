@@ -38,6 +38,7 @@ export default function AboutSection() {
       );
 
       gsap.fromTo(
+             // @ts-ignore
         values,
         { opacity: 0, y: 20 },
         {
@@ -55,6 +56,7 @@ export default function AboutSection() {
       );
 
       gsap.fromTo(
+        // @ts-ignore
         team,
         { opacity: 0, y: 20 },
         {
@@ -88,7 +90,7 @@ export default function AboutSection() {
           <div className="md:order-2">
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
-                src="/about-image.webp" // Replace with your actual image
+                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your actual image
                 alt="About Maruti Infra"
                 fill
                 className="object-cover"
@@ -159,7 +161,7 @@ export default function AboutSection() {
             <div className="text-center">
               <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/team-member-1.webp" // Replace with actual image
+                  src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" // Replace with actual image
                   alt="Ashish Natthani"
                   fill
                   className="object-cover"
@@ -172,7 +174,7 @@ export default function AboutSection() {
             <div className="text-center">
               <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/team-member-2.webp" // Replace with actual image
+                  src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png" // Replace with actual image
                   alt="Team Member 2"
                   fill
                   className="object-cover"
@@ -184,7 +186,7 @@ export default function AboutSection() {
              <div className="text-center">
               <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
-                  src="/team-member-3.webp" // Replace with actual image
+                  src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" // Replace with actual image
                   alt="Team Member 3"
                   fill
                   className="object-cover"

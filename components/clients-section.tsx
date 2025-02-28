@@ -4,12 +4,12 @@ import { useEffect, useRef } from "react"
 import Image from "next/image"
 
 const clients = [
-  { name: "Aesche", logo: "/placeholder.svg?height=100&width=200" },
-  { name: "Dalmia", logo: "/placeholder.svg?height=100&width=200" },
-  { name: "UltraTech", logo: "/placeholder.svg?height=100&width=200" },
-  { name: "Thermax", logo: "/placeholder.svg?height=100&width=200" },
-  { name: "Dangote", logo: "/placeholder.svg?height=100&width=200" },
-  { name: "Bharathi Cement", logo: "/placeholder.svg?height=100&width=200" },
+  // { name: "Aesche", logo: "/images/" },
+  { name: "Dalmia", logo: "/images/dalmia.png" },
+  { name: "UltraTech", logo:"/images/ultratech.png" },
+  { name: "Thermax", logo: "/images/thermax.png" },
+  { name: "Dangote", logo: "/images/dangote.png" },
+  { name: "Bharathi Cement", logo:"/images/bharathi.png"},
 ]
 
 export function ClientsSection() {
@@ -49,7 +49,7 @@ export function ClientsSection() {
                   height={100}
                   className="object-contain"
                 />
-                <p className="mt-2  text-lg font-semibold text-[#1a1a4e] ">{client.name}</p>
+                {/* <p className="mt-2  text-lg font-semibold text-[#1a1a4e] ">{client.name}</p> */}
               </div>
             ))}
           </div>

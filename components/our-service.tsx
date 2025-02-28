@@ -77,7 +77,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section className="py-20">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-primary uppercase font-semibold">OUR SERVICES</h3>
