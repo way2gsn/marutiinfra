@@ -5,15 +5,15 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
 
-export function Navbar() {
+export function Navbar(props:any) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  
   return (
-    <nav className="absolute top-0 left-0 right-0 z-50 bg-transparent">
+    <nav className={`absolute top-0 left-0 right-0 z-50  ${props.bgColor ? props. bgColor :"bg-transparent"} `}>
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Logo />
@@ -27,9 +27,7 @@ export function Navbar() {
             <Link href="/projects" className="text-white hover:text-primary transition-colors">
               OUR PROJECTS
             </Link>
-            <Link href="/gallery" className="text-white hover:text-primary transition-colors">
-              GALLERY
-            </Link>
+
             <Link href="/careers" className="text-white hover:text-primary transition-colors">
               CAREERS
             </Link>
