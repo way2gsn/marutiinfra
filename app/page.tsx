@@ -6,6 +6,7 @@ import { ClientsSection } from "@/components/clients-section"
 import { NewsletterSection } from "@/components/newsletter-section"
 import { Footer } from "@/components/footer"
 import {ServicesSection} from "@/components/our-service"
+import {ServiceMap} from "@/components/google-map"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <HeroSlider />
       <AboutSection />
       <WhyUsSection />
+      <ServiceMap  />
       <ClientsSection />
       <ServicesSection />
       <NewsletterSection />
