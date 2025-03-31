@@ -18,11 +18,11 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-02-21_at_9.17.42_PM-removebg-preview-qNvV5tU1sp0hjFGpOUlSeMo1Ch92jX.png"
-                alt="Maruti Infra Logo"
+                alt="Maruti Group Logo"
                 width={60}
                 height={60}
               />
-              <span className="text-xl font-bold">Maruti Infra</span>
+              <span className="text-xl font-bold">Maruti Group</span>
             </div>
             <div className="flex gap-4">
               <Link href="#" className="hover:text-primary transition-colors">
@@ -53,7 +53,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="#" className="hover:text-primary transition-colors">
-                  Sugar
+                  Steel
                 </Link>
               </li>
               <li>
@@ -111,7 +111,7 @@ export function Footer() {
                   <div>
                     <h4 className="font-semibold">Our Location</h4>
                     <p className="text-sm text-gray-300">
-                      Maruti Infra Pvt. Ltd.
+                      Maruti Group
                       <br />
                    309,Sadar Road,
 Baloda Bazar,
@@ -141,7 +141,7 @@ Chhattisgarh, 493332
             <p className="text-sm text-gray-400">
               © 2022 All Rights Reserved{" "}
               <Link href="/" className="text-white hover:text-primary">
-                Maruti Infra Pvt Ltd
+                Maruti Group 
               </Link>{" "}
               Designed by{" "}
               <Link href="#" className="text-white hover:text-primary">

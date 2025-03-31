@@ -31,7 +31,7 @@ export function WhyUsSection() {
       icon: <TrendingUp className="h-8 w-8 text-primary" />,
       title: "Expertise",
       description:
-        "Till today Maruti Infra has constructed plants in over 28 states all over the India.",
+        "Till today Maruti Group has constructed plants in over 28 states all over the India.",
     },
   ];
 
@@ -129,7 +129,7 @@ export function WhyUsSection() {
           <div ref={textContentRef} className="space-y-6">
             <h3 className="text-primary uppercase font-semibold">WHY US?</h3>
             <h2 className="text-4xl font-bold text-[#1a1a4e]">
-              Why Choose Maruti Infra?
+              Why Choose Maruti Group?
             </h2>
             <p className="text-gray-700 leading-relaxed">
               A well-engineered, high-quality product is not complete without

@@ -22,13 +22,28 @@ export default function ContactPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here (e.g., send data to a server)
-    console.log(formData);
-    // Reset form data after submission
-    setFormData({ name: "", email: "", phone: "", message: "" });
+  
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        alert("Your message has been sent successfully!");
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong!");
+    }
   };
+  
 
   useEffect(() => {
     const section = sectionRef.current;

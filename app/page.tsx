@@ -18,7 +18,7 @@ export default function Home() {
       <ServiceMap  />
       <ClientsSection />
       <ServicesSection />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </main>
   )

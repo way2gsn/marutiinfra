@@ -3,10 +3,11 @@ import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { gsap } from "gsap";
+import Link from "next/link";
 
 const slides = [
   {
-    title: "Maruti Infra",
+    title: "Maruti Infrastructure",
     subtitle:
       "A well-engineered, high-quality product is not complete without proper and safe execution. We are here for that.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -18,7 +19,7 @@ const slides = [
   },
   {
     title: "Pan India Reach",
-    subtitle: "Serving clients across 28 states with dedication and commitment to quality.",
+    subtitle: "Serving clients across 3 states with dedication and commitment to quality.",
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
@@ -54,9 +55,11 @@ export function HeroSlider() {
             <div className="container mx-auto px-4 text-center text-white slide-text">
               <h2 className="text-2xl">{slide.title}</h2>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">{slide.subtitle}</h1>
-              <Button className="bg-primary hover:bg-primary/90 border-white rounded-none px-8 mt-4">
+              <Link href={"/about"}>
+              <Button   className="bg-primary hover:bg-primary/90 border-white rounded-none px-8 mt-4">
                 KNOW MORE →
               </Button>
+              </Link>
             </div>
           </div>
         ))}

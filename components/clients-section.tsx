@@ -5,11 +5,14 @@ import Image from "next/image"
 
 const clients = [
   // { name: "Aesche", logo: "/images/" },
-  { name: "Dalmia", logo: "/images/dalmia.png" },
-  { name: "UltraTech", logo:"/images/ultratech.png" },
-  { name: "Thermax", logo: "/images/thermax.png" },
-  { name: "Dangote", logo: "/images/dangote.png" },
-  { name: "Bharathi Cement", logo:"/images/bharathi.png"},
+  { name: "Shree cements", logo: "/images/shree.png" },
+  { name: "Ambuja cemnets", logo:"/images/ambuja.png" },
+  { name: "ADANI CEMENT", logo: "/images/adani.png" },
+  { name: "LAFARGE CEMENT ", logo: "/images/lafarge.png" },
+  { name: "NUVOCO Cement", logo:"/images/nuvoco.png"},
+  { name: "EMAMI Cement", logo:"/images/emami.svg"},
+  { name: "MACMET Cement", logo:"/images/macmet.png"},
+  { name: "AYOKI FABRICON", logo:"/images/ayoki.png"},
 ]
 
 export function ClientsSection() {

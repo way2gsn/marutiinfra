@@ -102,19 +102,14 @@ export function AboutSection() {
           <div ref={leftContentRef} className="space-y-6">
             <div className="space-y-2">
               <h3 className="text-primary uppercase font-semibold">
-                ABOUT Maruti Infra
+                ABOUT Maruti Group
               </h3>
               <h2 className="text-4xl font-bold text-[#1a1a4e]">
                 We Provide Complete Construction Solutions
               </h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Maruti Infrastructure is a leading civil construction, mechanical
-              engineering, and material supply firm based in Baloda Bazar,
-              Chhattisgarh. Founded and led by Mr. Ashish Natthani, we bring
-              years of expertise and a commitment to quality and innovation. Our
-              work spans industrial structures, building projects, roads, and
-              mechanical fabrication.
+            Maruti Infrastructure is a leading civil construction, mechanical engineering, material supply and man power supply firm based in Baloda Bazar, Chhattisgarh. We bring years of expertise and a commitment to quality and innovation. Our work spans industrial structures, building projects, roads, and mechanical fabrication. (Know more here can redirect to clients)
             </p>
           </div>
           <div

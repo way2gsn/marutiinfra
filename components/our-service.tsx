@@ -11,6 +11,7 @@ interface Service {
   title: string;
   description: string;
   image: string;
+  link:string
 }
 
 const services: Service[] = [
@@ -19,35 +20,41 @@ const services: Service[] = [
     description:
       "We provide comprehensive civil construction services, including industrial structures, building projects, and roads.",
     image: "/images/construction-1.jpg", // Replace with actual image path
+    link:"civil-construction"
   },
   {
     title: "Mechanical Fabrication and Erection",
     description:
       "Our expertise covers mechanical fabrication and erection work, ensuring high-quality and precise installations.",
     image: "/images/construction-2.jpg", // Replace with actual image path
+      link:"mechanical-construction"
   },
   {
     title: "Material Supply",
     description:
       "We offer reliable material supply services to support your construction and mechanical projects.",
     image: "/images/construction-3.jpg", // Replace with actual image path
+    link:"material-supply"
   },
   {
     title: "Transporting and Handling",
     description:
       "Efficient transporting and handling services to ensure timely and safe delivery of materials and equipment.",
     image: "/images/construction-4.jpg", // Replace with actual image path
+    link:"transporting-handling"
   },
   {
     title: "Liaisoning Agency",
     description:
       "We act as a liaisoning agency, streamlining communication and processes between different stakeholders.",
     image: "/images/construction-5.jpg", // Replace with actual image path
+    link:"liaisoning-agency"
   },
   {
     title: "Equipment Supply",
     description: "We provide a wide range of construction and mechanical equipment.",
     image: "/images/construction-6.jpg", // Replace with actual image path
+    link:"equipment-supply"
   },
 ];
 
@@ -100,7 +107,7 @@ export function ServicesSection() {
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-[#1a1a4e]">{service.title}</h3>
                 <p className="text-gray-600 mt-2">{service.description}</p>
-                <a href="#" className="text-primary font-semibold mt-4 inline-block">
+                <a href={`services/${service.link}`} className="text-primary font-semibold mt-4 inline-block">
                   View Details
                 </a>
               </div>

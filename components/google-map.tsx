@@ -18,7 +18,7 @@ const serviceLocations = [
     lat: 21.2787,
     lng: 81.8661,
     name: "Raipur",
-    description: "Served M/s Raipur Handling & Infrastructure Pvt Ltd. in Raipur, Chhattisgarh.",
+    description: "Served M/s Raipur Handling & Infrastructure. in Raipur, Chhattisgarh.",
   },
   {
     lat: 22.4815,
@@ -32,90 +32,7 @@ const serviceLocations = [
     name: "Nuvoco",
     description: "Served M/s Nuvoco Vistas Corp Ltd.",
   },
-  {
-    lat: 21.57,
-    lng: 83.99,
-    name: "Kukurdih",
-    description: "Served M/ MACMET Engg (UTCL.Kukurdih).",
-  },
-  {
-    lat: 21.16,
-    lng: 81.33,
-    name: "Real Ispat",
-    description: "Served M/s Real Ispat & Energy Pvt Ltd. (GK TMT).",
-  },
-  {
-    lat: 22.09,
-    lng: 82.01,
-    name: "Sambhv Sponge",
-    "description": "Served M/s Sambhv sponge and Power Pvt Ltd."
-  },
-  {
-    "lat": 24.36,
-    "lng": 73.7,
-    "name": "Shree Cement",
-    "description": "Served M/s Shree Cement Ltd."
-  },
-    {
-    "lat": 28.7041,
-    "lng": 77.1025,
-    "name": "Delhi",
-    "description": "Served in Delhi."
-  },
-  {
-    "lat": 19.0760,
-    "lng": 72.8777,
-    "name": "Mumbai",
-    "description": "Served in Mumbai, Maharashtra."
-  },
-  {
-    "lat": 12.9716,
-    "lng": 77.5946,
-    "name": "Bangalore",
-    "description": "Served in Bangalore, Karnataka."
-  },
-  {
-    "lat": 26.8467,
-    "lng": 80.9462,
-    "name": "Lucknow",
-    "description": "Served in Lucknow, Uttar Pradesh."
-  },
-  {
-    "lat": 17.3850,
-    "lng": 78.4867,
-    "name": "Hyderabad",
-    "description": "Served in Hyderabad, Telangana."
-  },
-  {
-    "lat": 22.5726,
-    "lng": 88.3639,
-    "name": "Kolkata",
-    "description": "Served in Kolkata, West Bengal."
-  },
-  {
-    "lat": 26.9124,
-    "lng": 75.7873,
-    "name": "Jaipur",
-    "description": "Served in Jaipur, Rajasthan."
-  },
-  {
-    "lat": 11.0168,
-    "lng": 76.9558,
-    "name": "Coimbatore",
-    "description": "Served in Coimbatore, Tamil Nadu."
-  },
-  {
-    "lat": 15.3616,
-    "lng": 75.1240,
-    "name": "Hubli",
-    "description": "Served in Hubli, Karnataka."
-  },
-   {
-    "lat": 23.2599,
-    "lng": 77.4126,
-    "name": "Bhopal",
-    "description": "Served in Bhopal, Madhya Pradesh."
-  }
+
 ];
 
 const mapOptions = {

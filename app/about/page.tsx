@@ -6,6 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -91,7 +92,7 @@ export default function AboutSection() {
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your actual image
-                alt="About Maruti Infra"
+                alt="About Maruti Group"
                 fill
                 className="object-cover"
               />
@@ -99,10 +100,10 @@ export default function AboutSection() {
           </div>
           <div className="md:order-1">
             <h2 className="text-3xl font-bold text-[#1a1a4e] mb-4">
-              About Maruti Infrastructure
+              About Maruti Groupstructure
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
-              We are M/s. MARUTI INFRASTRUCTURE, a registered partnership firm
+              We are M/s. Maruti Group STRUCTURE, a registered partnership firm
               under the Registrar of Firms, Indian Partnership Act, 1932. Based in
               Baloda Bazar, Chhattisgarh, we specialize in Civil Construction,
               Mechanical Fabrication and Erection work, Transporting, Handling, and
@@ -157,7 +158,8 @@ export default function AboutSection() {
           <h2 className="text-2xl font-bold text-[#1a1a4e] mb-6 text-center">
             Meet Our Team
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex  justify-center items-space space-x-40">
+            <Link href={"ashish"}>
             <div className="text-center">
               <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
@@ -168,9 +170,11 @@ export default function AboutSection() {
                 />
               </div>
               <h3 className="text-lg font-semibold">Ashish Natthani</h3>
-              <p className="text-gray-600">Leading Partner</p>
+              <p className="text-gray-600">Co-founder</p>
             </div>
+            </Link>   
             {/* Add more team members as needed */}
+            <Link href={"adesh"}>
             <div className="text-center">
               <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                 <Image
@@ -180,21 +184,10 @@ export default function AboutSection() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-lg font-semibold">Team Member 2</h3>
-              <p className="text-gray-600">Role</p>
+              <h3 className="text-lg font-semibold">Adesh</h3>
+              <p className="text-gray-600">Co-Founder</p>
             </div>
-             <div className="text-center">
-              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
-                <Image
-                  src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png" // Replace with actual image
-                  alt="Team Member 3"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-semibold">Team Member 3</h3>
-              <p className="text-gray-600">Role</p>
-            </div>
+</Link>
           </div>
         </div>
 
@@ -204,7 +197,7 @@ export default function AboutSection() {
             Our Commitment
           </h2>
           <p className="text-gray-600 leading-relaxed mb-6">
-            At Maruti Infrastructure, we are dedicated to providing high-quality
+            At Maruti Groupstructure, we are dedicated to providing high-quality
             construction and material supply services. We strive to build lasting
             relationships with our clients through trust, reliability, and
             exceptional service.
