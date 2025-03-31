@@ -1,122 +1,114 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { GoogleMap, useLoadScript, Marker, InfoWindow } from "@react-google-maps/api";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaMapMarkerAlt, FaCheckCircle, FaCity, FaRoad, FaIndustry } from "react-icons/fa";
 
-const mapContainerStyle = {
-  width: "100%",
-  height: "600px",
-};
-
-const center = {
-  lat: 20.5937, // Approximate center of India
-  lng: 78.9629,
-};
-
-const serviceLocations = [
+const serviceAreas = [
   {
-    lat: 21.2787,
-    lng: 81.8661,
-    name: "Raipur",
-    description: "Served M/s Raipur Handling & Infrastructure. in Raipur, Chhattisgarh.",
+    state: "Chhattisgarh",
+    cities: ["Raipur", "Baloda Bazar", "Durg"],
+    icon: <FaCity size={32} />,
+    status: "Serving",
+    description: "Active projects in major cities.",
+    image: "https://cdn.pixabay.com/photo/2018/07/02/09/08/boat-3511183_1280.jpg" // Replace with actual image path
   },
   {
-    lat: 22.4815,
-    lng: 70.0033,
-    name: "Ambuja Nagar",
-    description: "Served M/s Ambuja Cement Ltd.",
+    state: "Gujarat",
+    cities: ["Ambuja Nagar", "Nuvoco"],
+    icon: <FaIndustry size={32} />,
+    status: "Served",
+    description: "Completed projects in industrial areas.",
+    image: "https://5.imimg.com/data5/SELLER/Default/2021/12/BE/EL/WC/18811883/gujrat-tour-package-500x500.jpg" // Replace with actual image path
   },
   {
-    lat: 22.5645,
-    lng: 72.9324,
-    name: "Nuvoco",
-    description: "Served M/s Nuvoco Vistas Corp Ltd.",
+    state: "Maharashtra",
+    cities: ["Mumbai", "Pune"],
+    icon: <FaRoad size={32} />,
+    status: "Planned",
+    description: "Upcoming road and infrastructure projects.",
+    image: "https://s7ap1.scene7.com/is/image/incredibleindia/1-gateway-of-india-state-hero?qlt=82&ts=1726670249199" // Replace with actual image path
   },
-
+  // {
+  //   state: "Odisha",
+  //   cities: ["Bhubaneswar", "Cuttack"],
+  //   icon: <FaMapMarkerAlt size={32} />,
+  //   status: "Serving",
+  //   description: "Ongoing construction and development.",
+  //   image: "/odisha.jpg" // Replace with actual image path
+  // },
+  // Add more states as needed
 ];
 
-const mapOptions = {
-  styles: [
-    {
-      featureType: "all",
-      elementType: "all",
-      stylers: [
-        { saturation: -80 },
-        { lightness: 100 },
-        { visibility: "simplified" },
-      ],
-    },
-    {
-      featureType: "administrative",
-      elementType: "geometry.fill",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "administrative",
-      elementType: "geometry.stroke",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "poi",
-      elementType: "all",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "road",
-      elementType: "all",
-      stylers: [{ visibility: "simplified" }],
-    },
-    {
-      featureType: "transit",
-      elementType: "all",
-      stylers: [{ visibility: "off" }],
-    },
-    {
-      featureType: "water",
-      elementType: "all",
-      stylers: [{ visibility: "simplified" }],
-    },
-  ],
-  mapTypeControl: false,
-  streetViewControl: false,
-  fullscreenControl: false,
-  mapTypeId: "roadmap", // Force roadmap (color mode)
-};
+const ServiceAreasSection = () => {
+  const [hoveredArea, setHoveredArea] = useState(null);
 
-export function ServiceMap() {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "", // Replace with your API key
-  });
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
-  const [selectedMarker, setSelectedMarker] = useState<number | null>(null);
-
-  if (loadError) return <div>Error loading maps!</div>;
-  if (!isLoaded) return <div>Loading Maps...</div>;
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
 
   return (
-    <GoogleMap
-      mapContainerStyle={mapContainerStyle}
-      center={center}
-      zoom={6}
-      options={mapOptions}
-    >
-      {serviceLocations.map((location, index) => (
-        <Marker
-          key={index}
-          position={{ lat: location.lat, lng: location.lng }}
-          title={location.name}
-          onClick={() => setSelectedMarker(index)}
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-[#1a1a4e] mb-8 text-center">
+          Our Service Areas
+        </h2>
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid md:grid-cols-3 gap-8 justify-center" // Modified for centering
         >
-          {selectedMarker === index && (
-            <InfoWindow onCloseClick={() => setSelectedMarker(null)}>
-              <div>
-                <h3>{location.name}</h3>
-                <p>{location.description}</p>
+          {serviceAreas.map((area, index:any) => (
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              className={`bg-white rounded-2xl p-6 shadow-md transition-transform duration-300 ${
+                hoveredArea === index ? "transform scale-105" : ""
+              }`}
+              onMouseEnter={() => setHoveredArea(index)}
+              onMouseLeave={() => setHoveredArea(null)}
+            >
+                <div className="relative h-48 w-full overflow-hidden rounded-t-2xl mb-4">
+                    <img
+                        src={area.image}
+                        alt={area.state}
+                        className="object-cover w-full h-full"
+                    />
+                </div>
+              <div className="flex items-center mb-4">
+                <span className="mr-4 text-primary">{area.icon}</span>
+                <div>
+                  <h3 className="text-xl font-semibold">{area.state}</h3>
+                  <p className="text-sm text-gray-500">{area.status} {area.status === "Serving" && <FaCheckCircle className="inline ml-1 text-green-500" />}</p>
+                </div>
               </div>
-            </InfoWindow>
-          )}
-        </Marker>
-      ))}
-    </GoogleMap>
+              <p className="text-gray-600 mb-4">{area.description}</p>
+              <div>
+                <h4 className="font-semibold text-sm">Cities:</h4>
+                <ul className="list-disc list-inside text-sm text-gray-700">
+                  {area.cities.map((city, cityIndex) => (
+                    <li key={cityIndex}>{city}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
-}
+};
+
+export default ServiceAreasSection;

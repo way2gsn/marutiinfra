@@ -88,11 +88,7 @@ export function Footer() {
                   Careers
                 </Link>
               </li>
-              <li>
-                <Link href="/blog" className="hover:text-primary transition-colors">
-                  Blog/News
-                </Link>
-              </li>
+             
               <li>
                 <Link href="/contact" className="hover:text-primary transition-colors">
                   Contact Us
