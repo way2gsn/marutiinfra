@@ -10,7 +10,7 @@ export function Logo() {
         width={40}
         height={40}
       />
-      <span className="text-white text-xl font-bold">Maruti Group</span>
+      <span className="text-white text-xl font-bold"><span className="text-orange-500">Maruti</span> Group</span>
     </Link>
   )
 }

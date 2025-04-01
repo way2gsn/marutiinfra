@@ -7,6 +7,7 @@ import { NewsletterSection } from "@/components/newsletter-section";
 import { Footer } from "@/components/footer";
 import { ServicesSection } from "@/components/our-service";
 import ServiceMap from "@/components/google-map";
+import VenturesSection from "@/components/ventures";
 
 export default function Home() {
   return (
@@ -48,6 +49,7 @@ export default function Home() {
       <ServiceMap />
       <ClientsSection />
       <ServicesSection />
+      <VenturesSection />
       {/* <NewsletterSection /> */}
       <Footer />
     </main>

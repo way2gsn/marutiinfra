@@ -22,7 +22,7 @@ export function Footer() {
                 width={60}
                 height={60}
               />
-              <span className="text-xl font-bold">Maruti Group</span>
+              <span className="text-xl font-bold"><span className="text-orange-500">Maruti</span> Group</span>
             </div>
             <div className="flex gap-4">
               <Link href="#" className="hover:text-primary transition-colors">
