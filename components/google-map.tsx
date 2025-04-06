@@ -2,42 +2,31 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaMapMarkerAlt, FaCheckCircle, FaCity, FaRoad, FaIndustry } from "react-icons/fa";
+import { FaMapMarkerAlt, FaCheckCircle } from "react-icons/fa";
 
 const serviceAreas = [
+  // New Entries
+  {
+    state: "Karnataka",
+    locations: ["Sedam", "Korla"],
+    status: "Serving",
+    description: "Ongoing projects in Sedam and Korla.",
+    image: "/images/karnatka.jpg", // Replace with a relevant Karnataka image
+  },
   {
     state: "Chhattisgarh",
-    cities: ["Raipur", "Baloda Bazar", "Durg"],
-    icon: <FaCity size={32} />,
+    locations: ["Tilda", "Baloda Bazaar"],
     status: "Serving",
-    description: "Active projects in major cities.",
-    image: "https://cdn.pixabay.com/photo/2018/07/02/09/08/boat-3511183_1280.jpg" // Replace with actual image path
+    description: "Continuing our work in Tilda and Baloda Bazaar.",
+    image: "/images/CG.png", // Replace with a relevant Chhattisgarh image
   },
   {
-    state: "Gujarat",
-    cities: ["Ambuja Nagar", "Nuvoco"],
-    icon: <FaIndustry size={32} />,
-    status: "Served",
-    description: "Completed projects in industrial areas.",
-    image: "https://5.imimg.com/data5/SELLER/Default/2021/12/BE/EL/WC/18811883/gujrat-tour-package-500x500.jpg" // Replace with actual image path
+    state: "Telangana",
+    locations: ["Hyderabad", "Warangal"],
+    status: "Serving soon",
+    description: "Will Work in Hyderabad.",
+    image: "/images/Hyderabad.png", // Replace with a relevant Chhattisgarh image
   },
-  {
-    state: "Maharashtra",
-    cities: ["Mumbai", "Pune"],
-    icon: <FaRoad size={32} />,
-    status: "Planned",
-    description: "Upcoming road and infrastructure projects.",
-    image: "https://s7ap1.scene7.com/is/image/incredibleindia/1-gateway-of-india-state-hero?qlt=82&ts=1726670249199" // Replace with actual image path
-  },
-  // {
-  //   state: "Odisha",
-  //   cities: ["Bhubaneswar", "Cuttack"],
-  //   icon: <FaMapMarkerAlt size={32} />,
-  //   status: "Serving",
-  //   description: "Ongoing construction and development.",
-  //   image: "/odisha.jpg" // Replace with actual image path
-  // },
-  // Add more states as needed
 ];
 
 const ServiceAreasSection = () => {
@@ -59,49 +48,52 @@ const ServiceAreasSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-[#1a1a4e] mb-8 text-center">
+        <h2 className="text-3xl font-bold text-[#1a1a4e] mb-12 text-center">
           Our Service Areas
         </h2>
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid md:grid-cols-3 gap-8 justify-center" // Modified for centering
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {serviceAreas.map((area, index:any) => (
+          {serviceAreas.map((area, index: any) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className={`bg-white rounded-2xl p-6 shadow-md transition-transform duration-300 ${
-                hoveredArea === index ? "transform scale-105" : ""
+              className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ${
+                hoveredArea === index ? "transform scale-105 shadow-lg" : ""
               }`}
               onMouseEnter={() => setHoveredArea(index)}
               onMouseLeave={() => setHoveredArea(null)}
             >
-                <div className="relative h-48 w-full overflow-hidden rounded-t-2xl mb-4">
-                    <img
-                        src={area.image}
-                        alt={area.state}
-                        className="object-cover w-full h-full"
-                    />
-                </div>
-              <div className="flex items-center mb-4">
-                <span className="mr-4 text-primary">{area.icon}</span>
-                <div>
+              <div className="relative h-64 w-full overflow-hidden rounded-t-lg">
+                <img
+                  src={area.image}
+                  alt={area.state}
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-60"></div>
+                <div className="absolute bottom-0 left-0 p-6 text-white">
                   <h3 className="text-xl font-semibold">{area.state}</h3>
-                  <p className="text-sm text-gray-500">{area.status} {area.status === "Serving" && <FaCheckCircle className="inline ml-1 text-green-500" />}</p>
+                  <p className="text-sm">{area.locations.join(", ")}</p>
                 </div>
               </div>
-              <p className="text-gray-600 mb-4">{area.description}</p>
-              <div>
-                <h4 className="font-semibold text-sm">Cities:</h4>
-                <ul className="list-disc list-inside text-sm text-gray-700">
-                  {area.cities.map((city, cityIndex) => (
-                    <li key={cityIndex}>{city}</li>
-                  ))}
-                </ul>
+              <div className="p-6">
+                <div className="flex items-center mb-2">
+                  <span className="mr-2 text-primary">
+                    <FaMapMarkerAlt size={16} />
+                  </span>
+                  <p className="text-sm text-gray-500">
+                    Status: {area.status}
+                    {area.status === "Serving" && (
+                      <FaCheckCircle className="inline ml-1 text-green-500" />
+                    )}
+                  </p>
+                </div>
+                <p className="text-gray-700 mb-4 text-sm">{area.description}</p>
               </div>
             </motion.div>
           ))}

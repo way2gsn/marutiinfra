@@ -9,7 +9,7 @@ const clients = [
   { name: "Ambuja cemnets", logo:"/images/ambuja.png" },
   { name: "ADANI CEMENT", logo: "/images/adani.png" },
   { name: "LAFARGE CEMENT ", logo: "/images/lafarge.png" },
-  { name: "NUVOCO Cement", logo:"/images/nuvoco.png"},
+  { name: "NUVOCO Cement", logo:"/images/Nuvoco.png"},
   { name: "EMAMI Cement", logo:"/images/emami.svg"},
   { name: "MACMET Cement", logo:"/images/macmet.png"},
   { name: "AYOKI FABRICON", logo:"/images/ayoki.png"},

@@ -90,8 +90,8 @@ export default function AboutSection() {
           <div className="md:order-2">
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Replace with your actual image
-                alt="About Maruti Group"
+                src="/images/Ashish.jpeg" // Replace with your actual image
+                alt="About Ashis"
                 fill
                 className="object-cover"
               />

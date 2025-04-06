@@ -5,13 +5,15 @@ export function Logo() {
   return (
     <Link href="/" className="logo">
       <Image
-        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-02-21_at_9.17.42_PM-removebg-preview-qNvV5tU1sp0hjFGpOUlSeMo1Ch92jX.png"
+        src="/images/maruti_logo.png"
         alt="Maruti Group Logo"
-        width={40}
-        height={40}
+        width={100}
+        height={80}
+        className="w-100 h-100 object-contain"
+        // className="w-100 h-100 object-contain"
       />
-      <span className="text-white text-xl font-bold"><span className="text-orange-500">Maruti</span> Group</span>
-    </Link>
+    
+     </Link>
   )
 }
 

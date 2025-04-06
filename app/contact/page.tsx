@@ -17,6 +17,8 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionStatus, setSubmissionStatus] = useState<"idle" | "success" | "error">("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,26 +26,29 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+    setIsSubmitting(true);
+    setSubmissionStatus("idle");
+
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contact", { // Changed API endpoint
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, toEmail: "contact@marutigroup.org.in" }), // Include recipient email
       });
-  
+
       if (response.ok) {
-        alert("Your message has been sent successfully!");
+        setSubmissionStatus("success");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        alert("Failed to send message. Please try again.");
+        setSubmissionStatus("error");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Something went wrong!");
+      setSubmissionStatus("error");
+    } finally {
+      setIsSubmitting(false);
     }
   };
-  
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -75,119 +80,133 @@ export default function ContactPage() {
   }, []);
 
   return (
-      <main className="min-h-screen ">
-              <Navbar bgColor="bg-[#1B1B2F]" />
-    <section ref={sectionRef} className="py-20 mt-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-[#1a1a4e] mb-8 text-center">
-          Contact Us
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="md:order-1">
-            <p className="text-gray-600 leading-relaxed mb-6">
-              We are here to answer any questions you may have about our
-              services. Reach out to us and we'll respond as soon as we can.
-            </p>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold">Address</h3>
-                <p className="text-gray-600">
-                  309, Sadar Road, Baloda Bazar, Chhattisgarh, 493332, India
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold">Phone</h3>
-                <p className="text-gray-600">+91 9691399111</p>
-              </div>
-              <div>
-                <h3 className="font-semibold">Email</h3>
-                <p className="text-gray-600">info@marutiinfra.com</p>
+    <main className="min-h-screen ">
+      <Navbar bgColor="bg-[#1B1B2F]" />
+      <section ref={sectionRef} className="py-20 mt-20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-[#1a1a4e] mb-8 text-center">
+            Contact Us
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="md:order-1">
+              <p className="text-gray-600 leading-relaxed mb-6">
+                We are here to answer any questions you may have about our
+                services. Reach out to us and we'll respond as soon as we can.
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <h3 className="font-semibold">Address</h3>
+                  <p className="text-gray-600">
+                    AC Complex , Garden Chowk , Main Road , Baloda Bazar 493332 Chhattisgarh
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Phone</h3>
+                  <p className="text-gray-600">+91-8827912116</p>
+                  <p className="text-gray-600">+91-7727796392</p>
+                </div>
+                <div>
+                  <h3 className="font-semibold">Email</h3>
+                  <p className="text-gray-600">contact@marutigroup.org.in</p>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="md:order-2">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Phone
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-                  required
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-white py-3 px-6 rounded-md font-semibold hover:bg-primary/90 transition-colors duration-300"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
+            <div className="md:order-2">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
+                    required
+                  ></textarea>
+                </div>
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full bg-primary text-white py-3 px-6 rounded-md font-semibold hover:bg-primary/90 transition-colors duration-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </button>
+                </div>
+              </form>
+
+              {submissionStatus === "success" && (
+                <div className="mt-4 text-green-500">
+                  Your message has been sent successfully to contact@marutigroup.org.in!
+                </div>
+              )}
+
+              {submissionStatus === "error" && (
+                <div className="mt-4 text-red-500">
+                  Failed to send message. Please try again later.
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <Footer />
+      </section>
+      <Footer />
     </main>
   );
 }

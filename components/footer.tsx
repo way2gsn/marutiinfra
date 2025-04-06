@@ -17,12 +17,11 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp_Image_2025-02-21_at_9.17.42_PM-removebg-preview-qNvV5tU1sp0hjFGpOUlSeMo1Ch92jX.png"
+                src="/images/maruti_logo.png"
                 alt="Maruti Group Logo"
-                width={60}
-                height={60}
+                width={200}
+                height={180}
               />
-              <span className="text-xl font-bold"><span className="text-orange-500">Maruti</span> Group</span>
             </div>
             <div className="flex gap-4">
               <Link href="#" className="hover:text-primary transition-colors">
@@ -66,11 +65,6 @@ export function Footer() {
                   Material Handling Systems
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Other Projects
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -107,11 +101,7 @@ export function Footer() {
                   <div>
                     <h4 className="font-semibold">Our Location</h4>
                     <p className="text-sm text-gray-300">
-                      Maruti Group
-                      <br />
-                   309,Sadar Road,
-Baloda Bazar,
-Chhattisgarh, 493332
+                      AC Complex , Garden Chowk , Main Road , Baloda Bazar 493332 Chhattisgarh
                     </p>
                   </div>
                 </div>
@@ -122,7 +112,7 @@ Chhattisgarh, 493332
                   <div>
                     <h4 className="font-semibold">Email Address</h4>
                     <Link href="mailto:info@ayokifabricon.com" className="text-sm text-gray-300 hover:text-primary">
-                      info@marutiinfra.com
+                    contact@marutigroup.org.in
                     </Link>
                   </div>
                 </div>
@@ -135,7 +125,7 @@ Chhattisgarh, 493332
         <div className="border-t border-gray-800 pt-4 mt-8">
           <div className="flex flex-wrap justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              © 2022 All Rights Reserved{" "}
+              © 2025 All Rights Reserved{" "}
               <Link href="/" className="text-white hover:text-primary">
                 Maruti Group 
               </Link>{" "}

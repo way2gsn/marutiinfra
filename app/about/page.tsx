@@ -214,7 +214,7 @@ export default function AboutSection() {
                 <div className="text-center">
                   <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                     <Image
-                      src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png"
+                      src="/images/Ashish.jpeg"
                       alt="Ashish Natthani"
                       fill
                       className="object-cover"
@@ -228,8 +228,8 @@ export default function AboutSection() {
                 <div className="text-center">
                   <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden mb-4">
                     <Image
-                      src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png"
-                      alt="Team Member 2"
+                      src="/images/Adesh.jpeg"
+                      alt="Adesh"
                       fill
                       className="object-cover"
                     />
