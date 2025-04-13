@@ -31,6 +31,9 @@ export function Navbar(props:any) {
             <Link href="/careers" className="text-white hover:text-primary transition-colors">
               CAREERS
             </Link>
+            <Link href="/gallery" className="text-white hover:text-primary transition-colors">
+              GALLERY
+            </Link>
             <Link href="/contact" className="text-white hover:text-primary transition-colors">
               CONTACT US
             </Link>
