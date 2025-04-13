@@ -130,7 +130,7 @@ export function Footer() {
                 Maruti Group 
               </Link>{" "}
               Designed by{" "}
-              <Link href="#" className="text-white hover:text-primary">
+              <Link target="_blank" href="https://johaar.life" className="text-white hover:text-primary">
                Johaar Life
               </Link>
             </p>
