@@ -24,13 +24,13 @@ export function Footer() {
               />
             </div>
             <div className="flex gap-4">
-              <Link href="#" className="hover:text-primary transition-colors">
+              {/* <Link href="#" className="hover:text-primary transition-colors">
                 <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              </Link> */}
+              <Link href="https://www.instagram.com/marutiinfrastructure?igsh=aTk4djBkN3NobTBq&utm_source=qr" className="hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link href="https://www.linkedin.com/in/maruti-infrastructure-051b31337?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" className="hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </div>
