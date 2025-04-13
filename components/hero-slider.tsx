@@ -10,17 +10,17 @@ const slides = [
     title: "Maruti Infrastructure",
     subtitle:
       "A well-engineered, high-quality product is not complete without proper and safe execution. We are here for that.",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "images/construction1.jpg",
   },
   {
     title: "Excellence in Construction",
     subtitle: "11 years of experience in delivering quality construction projects across PAN India.",
-    image: "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "images/construction2.jpg",
   },
   {
     title: "Pan India Reach",
     subtitle: "Serving clients across 3 states with dedication and commitment to quality.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "images/construction3.jpg",
   },
 ];
 

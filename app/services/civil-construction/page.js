@@ -36,7 +36,7 @@ export default function CivilConstruction() {
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2000&auto=format&fit=crop"
+              src="/images/construction2.jpg"
               alt="Structural Engineering"
               width={400}
               height={250}
@@ -47,7 +47,7 @@ export default function CivilConstruction() {
           </div>
           <div className="p-6 bg-gray-100 rounded-lg shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1503708928676-1cb796a0891e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="/images/construction3.jpg"
               alt="Road & Bridge Construction"
               width={400}
               height={250}
